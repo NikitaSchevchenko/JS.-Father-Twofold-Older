@@ -1,5 +1,11 @@
 'use strict'
 
+/**
+ * 
+ * @param {int} fatherAge-вік батька
+ * @param {int} sonAge-вік сина
+ * @returns {int}-через скільки років батько буде(або був якщо результат від'ємний) старше 2 раза сина
+ */
 function calculateTwoFoldOlder(fatherAge,sonAge){
     if(
         typeof fatherAge!=='number'||
