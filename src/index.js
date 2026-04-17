@@ -1,0 +1,44 @@
+'use strict'
+
+function calculateTwoFoldOlder(fatherAge,sonAge){
+    if(
+        typeof fatherAge!=='number'||
+        typeof sonAge!='number'||
+        fatherAge < 0 ||
+        sonAge < 0 ||
+        fatherAge-sonAge<=15
+    ){
+        return NaN
+    }
+    const res=fatherAge-2*sonAge;
+    return res;
+}
+
+function formMessage(res){
+    const lastDigit=res%10;
+    const firstDigit=Math.floor(res/10)
+
+    let yearsFormatNoun;
+    if (firstDigit===1){
+        yearsFormatNoun="років"
+    }
+    else if(lastDigit===0){
+        yearsFormatNoun="років";
+    }
+    else if(lastDigit===1){
+        yearsFormatNoun="рік"
+    }
+    else if(lastDigit<5){
+        yearsFormatNoun="роки"
+    }
+    else{
+        yearsFormatNoun="років"
+    }
+
+    let message = `Батько ${res > 0 ? "буде" : "був"} удвічі старший за сина ${res > 0 ? "через" : ""} ${Math.abs(res)} ${yearsFormatNoun} ${res > 0 ? "" : "тому"}`;
+    return message
+}
+
+const res=calculateTwoFoldOlder(80,50);
+
+console.log(formMessage(res));
