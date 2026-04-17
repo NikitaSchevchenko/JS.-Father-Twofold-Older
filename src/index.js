@@ -26,7 +26,7 @@ function formMessage(res){
     const firstDigit=Math.floor(res/10);
     let yearsFormatNoun;
 
-    if(isNaN(res)||!isFinite(res)){
+    if(Number.isNaN(res)||!isFinite(res)){
         return "Неправильні дані";
     }
     if(res===0){
