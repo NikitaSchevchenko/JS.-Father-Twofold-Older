@@ -15,11 +15,15 @@ function calculateTwoFoldOlder(fatherAge,sonAge){
 }
 
 function formMessage(res){
+    let message;
     const lastDigit=res%10;
-    const firstDigit=Math.floor(res/10)
-
+    const firstDigit=Math.floor(res/10);
     let yearsFormatNoun;
-    if (firstDigit===1){
+
+    if(res===0){
+        return "Цього року"
+    }
+    else if (firstDigit===1){
         yearsFormatNoun="років"
     }
     else if(lastDigit===0){
@@ -35,7 +39,7 @@ function formMessage(res){
         yearsFormatNoun="років"
     }
 
-    let message = `Батько ${res > 0 ? "буде" : "був"} удвічі старший за сина ${res > 0 ? "через" : ""} ${Math.abs(res)} ${yearsFormatNoun} ${res > 0 ? "" : "тому"}`;
+    message = `Батько ${res > 0 ? "буде" : "був"} удвічі старший за сина ${res > 0 ? "через" : ""} ${Math.abs(res)} ${yearsFormatNoun} ${res > 0 ? "" : "тому"}`;
     return message
 }
 
