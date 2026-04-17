@@ -8,43 +8,43 @@
  */
 function calculateTwoFoldOlder(fatherAge,sonAge){
     if(
-        typeof fatherAge!=='number'||
-        typeof sonAge!='number'||
+        typeof fatherAge !== 'number'||
+        typeof sonAge !== 'number'||
         fatherAge < 0 ||
         sonAge < 0 ||
-        fatherAge-sonAge<=15
+        fatherAge-sonAge <= 15
     ){
         return NaN
     }
-    const res=fatherAge-2*sonAge;
+    const res = fatherAge-2*sonAge;
     return res;
 }
 
 function formMessage(res){
     let message;
-    const lastDigit=res%10;
-    const firstDigit=Math.floor(res/10);
+    const lastDigit = res%10;
+    const firstDigit = Math.floor(res/10);
     let yearsFormatNoun;
 
-    if(Number.isNaN(res)||!isFinite(res)){
+    if (Number.isNaN(res) || !isFinite(res)){
         return "Неправильні дані";
     }
-    if(res===0){
+    if (res === 0){
         return "Цього року";
     }
-    else if (firstDigit===1){
-        yearsFormatNoun="років"
+    else if (firstDigit === 1){
+        yearsFormatNoun = "років"
     }
-    else if(lastDigit===0){
-        yearsFormatNoun="років";
+    else if (lastDigit===0){
+        yearsFormatNoun = "років";
     }
-    else if(lastDigit===1){
-        yearsFormatNoun="рік"
+    else if (lastDigit === 1){
+        yearsFormatNoun = "рік"
     }
-    else if(lastDigit<5){
-        yearsFormatNoun="роки"
+    else if (lastDigit < 5){
+        yearsFormatNoun = "роки"
     }
-    else{
+    else {
         yearsFormatNoun="років"
     }
 
@@ -52,6 +52,6 @@ function formMessage(res){
     return message
 }
 
-const res=calculateTwoFoldOlder(80,50);
+const res = calculateTwoFoldOlder(80,50);
 
 console.log(formMessage(res));
