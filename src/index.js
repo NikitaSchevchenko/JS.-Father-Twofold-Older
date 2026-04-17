@@ -26,8 +26,11 @@ function formMessage(res){
     const firstDigit=Math.floor(res/10);
     let yearsFormatNoun;
 
+    if(isNaN(res)||!isFinite(res)){
+        return "Неправильні дані";
+    }
     if(res===0){
-        return "Цього року"
+        return "Цього року";
     }
     else if (firstDigit===1){
         yearsFormatNoun="років"
