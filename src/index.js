@@ -22,8 +22,9 @@ function calculateTwoFoldOlder(fatherAge,sonAge){
 
 function formMessage(res){
     let message;
-    const lastDigit = res%10;
-    const firstDigit = Math.floor(res/10);
+    
+    const lastDigit = Math.abs(res)%10;
+    const firstDigit = Math.floor(Math.abs(res)/10);
     let yearsFormatNoun;
 
     if (Number.isNaN(res) || !isFinite(res)){
@@ -52,6 +53,6 @@ function formMessage(res){
     return message
 }
 
-const res = calculateTwoFoldOlder(80,50);
+const res = calculateTwoFoldOlder(81,50);
 
 console.log(formMessage(res));
