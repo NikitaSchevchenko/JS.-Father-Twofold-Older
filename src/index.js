@@ -54,5 +54,4 @@ function formMessage(res){
 }
 
 const res = calculateTwoFoldOlder(81,50);
-
 console.log(formMessage(res));
