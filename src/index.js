@@ -13,7 +13,7 @@ function calculateTwoFoldOlder(fatherAge,sonAge){
         fatherAge < 0 ||
         sonAge < 0 ||
         fatherAge-sonAge <= 15
-    ){
+    ) {
         return NaN
     }
     const res = fatherAge-2*sonAge;
@@ -27,22 +27,22 @@ function formMessage(res){
     const firstDigit = Math.floor(Math.abs(res)/10);
     let yearsFormatNoun;
 
-    if (Number.isNaN(res) || !isFinite(res)){
+    if (Number.isNaN(res) || !isFinite(res)) {
         return "Неправильні дані";
     }
-    if (res === 0){
+    if (res === 0) {
         return "Цього року";
     }
-    else if (firstDigit === 1){
+    else if (firstDigit === 1) {
         yearsFormatNoun = "років"
     }
-    else if (lastDigit===0){
+    else if (lastDigit===0) {
         yearsFormatNoun = "років";
     }
-    else if (lastDigit === 1){
+    else if (lastDigit === 1) {
         yearsFormatNoun = "рік"
     }
-    else if (lastDigit < 5){
+    else if (lastDigit < 5) {
         yearsFormatNoun = "роки"
     }
     else {
